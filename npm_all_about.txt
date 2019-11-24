@@ -1,0 +1,51 @@
+NPM is Node Package Manager. Pre-installed with Node.js. Installs modules/packages/libraries on yor system. Makes it easy for developers to share & reuse code. 
+Package.json file is the manifest file with application info. Lists all dependencies with version. Create NPM scripts. Can be created with the command "npm init".
+npm init -y or npm init --yes to create packege.json with default values.
+Below are some sample commands to check the default values-
+npm get init-author-name or npm get init-license
+
+To change the default values-
+npm set init-author-name "Anand Sasidharan" or npm set init-license "MIT"
+
+To reset the changes to default values-
+npm config delete init-author-name or npm config delete init-license
+
+NPM Dependencies vs NPM Dev Dependencies-
+Dev Dependencies are libraries that the application need in development alone, not production. Eg. gulp/grunt, webpack
+npm install gulp gulp-sass --save-dev
+
+NPM Dependencies are modules/libraries that are needed in production as well. Eg. Lodash, Jquery, async
+npm install lodash --save
+"npm install --production" to install Dependencies alone. It will not install NPM Dev Dependencies
+
+To uninstall any dependencies-
+npm uninstall gulp-sass --save-dev OR
+npm remove gulp --save-dev OR
+npm rm lodash --save OR
+npm un gulp --save-dev
+
+Install specific version of a dependency-
+npm install lodash@4.17.3 --save
+
+To update dependencies to latest version
+npm update lodash
+
+Versioning of NPM Modules-
+(Major Version).(Minor Version).(Patch)
+(Major changes that may break your app).(New features, but does not break your app).(Bug fixes)
+"^" install latest minor version and keep everything else the same. Eg. "lodash": "^4.17.4"
+"~" install latest patch version and keep everything else the same. Eg. "lodash": "~4.17.4"
+Blank character installs the exact version specified, no matter what. Eg. "lodash": "4.17.4"
+"*" install absolute latest version. So if a major version is available, it installs that. Eg. "lodash": "*". This may not be a good idea. 
+
+NPM Global Modules-
+Installs globally in the computer and can be accessed from any projects in the system. Eg. nodemon
+npm install -g nodemon
+npm uninstall -g nodemon
+"npm root -g" to find the path of global installs
+
+"npm list" to list all packages in your module.
+"npm list --depth 0" to list all top level packages in your module.
+
+NPM Scripts-
+"start": "node index.js"
