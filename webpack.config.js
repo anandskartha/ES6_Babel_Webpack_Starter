@@ -1,4 +1,5 @@
 var path = require('path'); //Core module
+var webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -6,7 +7,8 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'app.bundle.js'
+        filename: 'app.bundle.js',
+        publicPath: '/build'
     },
     module: {
         rules: [{
@@ -16,6 +18,13 @@ module.exports = {
             query: {
                 presets: ['@babel/preset-env']
             }
+        },
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         }]
-    }
+    },
+    plugins: [
+        
+    ]
 }

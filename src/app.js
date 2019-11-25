@@ -1,3 +1,4 @@
+import './css/main.css'
 import {sayHello, getPosts} from './lib'
 //alert(sayHello(person))
 

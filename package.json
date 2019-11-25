@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development",
+    "_build": "webpack --mode=development",
+    "build": "webpack-dev-server --mode=development",
+    "build:prod": "webpack -p",
     "start": "webpack-dev-server --output-public-path=/build/"
   },
   "keywords": [],
@@ -16,6 +18,8 @@
     "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
