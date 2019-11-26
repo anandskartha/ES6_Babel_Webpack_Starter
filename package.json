@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "_build": "webpack --mode=development",
-    "build": "webpack-dev-server --mode=development",
+    "build": "webpack-dev-server",
     "build:prod": "webpack -p",
     "start": "webpack-dev-server --output-public-path=/build/"
   },
@@ -19,6 +19,9 @@
     "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
