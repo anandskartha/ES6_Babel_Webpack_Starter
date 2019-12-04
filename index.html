@@ -5,13 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ES6 Babel Webpack</title>
-    <link rel = "stylesheet" href="/build/main.bundle.css">
+    <link rel = "stylesheet" href="main.css">
 </head>
 <body>
-    <h1>ES6 Babel Webpack</h1>
-    <button class="randomInt">A Random Integer</button>
-    <button class="randomRange">A Random Integer in a Range</button>
-    <p id="outputParagraph">You can't see this all the time</p>
-    <script src="/build/app.bundle.js"></script>
+    <header id="main-header">
+        <div class="container">
+            <h1>ES6 Babel Webpack</h1>
+        </div>
+    </header>
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="showcase">
+        <div class="container">
+            <h1>
+                Javascript ES6 has been around for few years now, and it allows us to write code in a clever way which basically makes the code more modern and more readable.It’s fair to say that with the use of ES6 features we write less and do more, hence the term ‘write less, do more’ definitely suits ES6.
+            </h1>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section id="main">
+            <h1>ECMAScript vs Javascript</h1>
+            <p>ECMAScript: It is the specification defined in ECMA-262 for creating a general purpose scripting language.In simple terms it is a standardization for creating a scripting language.It was introduced by Ecma International, and is basically an implementation with which we learn how to create a scripting language.
+            Javascript: A general purpose scripting language that conforms to the ECMAScript specification.It is bascially an implementation which tells us how to use a scripting language.</p>
+        </section>
+        <aside id="sidebar">
+            A general purpose scripting language that conforms to the ECMAScript specification.It is bascially an implementation which tells us how to use a scripting language.
+        </aside>
+    </div>
+
+    <div class="container">
+        <div id="content"></div>
+    </div>
+    <div class="container">
+        <div id="content2"></div>
+    </div>
+
+
+    <footer id="main-footer">
+        <p>Copyright &copy;2017; My Website</p>
+    </footer>
+
+    <script src="build/app.bundle.js"></script>
 </body>
 </html>

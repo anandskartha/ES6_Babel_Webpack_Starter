@@ -1,10 +1,10 @@
 var path = require('path'); //Core module
 //var webpack = require('webpack');
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-var miniCssExtractPlugin = new MiniCssExtractPlugin({
+/*var miniCssExtractPlugin = new MiniCssExtractPlugin({
     filename: 'main.bundle.css'
-});
+});*/
 module.exports = {
     entry: {
         app: ['@babel/polyfill', './src/app.js']
@@ -25,7 +25,7 @@ module.exports = {
                     presets: ['@babel/preset-env']
                 }
             }]
-        },
+        }]/*,
         {
             test: /\.scss$/,
             use: [
@@ -39,9 +39,9 @@ module.exports = {
               'css-loader',
               'sass-loader'
             ]
-        }]
+        }]*/
     },
     plugins: [
-        miniCssExtractPlugin
+        //miniCssExtractPlugin
     ]
 }
