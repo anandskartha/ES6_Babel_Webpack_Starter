@@ -3,7 +3,11 @@ export let output, output2;
 //Template Literals
 const word1 = 'Hello';
 const word2 = 'World';
-output = `${word1} <b>${word2}</b>`;
+const thisIsFun = (a, b, c) => {
+    output = `a: ${a}b:${b},  c:${c}`;
+}
+thisIsFun`First argument ${word1}  ${word2}`;
+//output = `${word1} <b>${word2}</b>`;
 
 //Object Destructuring
 let personalInfo = {
@@ -13,16 +17,16 @@ let personalInfo = {
     country: 'Singapore'
 };
 const {firstName: fn, lastName: ln} = personalInfo;
-output = `Hello ${fn} ${ln}`;
+//output = `Hello ${fn} ${ln}`;
 
 //Array Destructuring
 const nameArray = ['John', 'Honai', 'Gopalakrisnan', 'Pavanai'];
 const [name1, name2, , name4] = nameArray;
-output = `${name1} ${name2} ${name4}`;
+//output = `${name1} ${name2} ${name4}`;
 
 //Object Literal
 const addressObjectMaker = (city, state) => { return {city, state}};
-output = JSON.stringify(addressObjectMaker('Austin', 'Texas'));
+//output = JSON.stringify(addressObjectMaker('Austin', 'Texas'));
 
 //Object Literal Challenge
 const addressMaker = (address) => { 
@@ -34,24 +38,24 @@ const addressMaker = (address) => {
     }
     return `${newAddress.city}, ${newAddress.state}, ${newAddress.country}`;
 };
-output = addressMaker({city: 'Austin', state: 'Texas'});
+//output = addressMaker({city: 'Austin', state: 'Texas'});
 
 //For of Loop
 const incomes = [100, 200, 300];
 let sum = 0;
-output = null;
+//output = null;
 for(const income of incomes) {
-    output = `${output || ''} + ${income}`
+    //output = `${output || ''} + ${income}`
     sum += income;
 }
-output = `${output} = ${sum}`;
+//output = `${output} = ${sum}`;
 
 const fullName = 'John Honai';
 let name = '';
 for(const char of fullName) {
     name = ` ${name} ${char} - `;
 }
-output = name;
+//output = name;
 
 //Spread Operator
 personalInfo = {
@@ -64,24 +68,24 @@ const personalInfo2 = {
     ...personalInfo,
     profession: 'Hitman'
 };
-output = JSON.stringify(personalInfo2);
+//output = JSON.stringify(personalInfo2);
 
 //Rest operator
 ((...nums) => {
-    output = nums;
+    //output = JSON.stringify(nums);
 })(1, 2, 3, 4, 5, 6, 7);
 
 //Default Parameters
 const add = (a = 0, b = 0, c = 0) => a + b + c;
-output = add(2);
+//output = add(2);
 
 //Inludes()
 const numArray = [1, 2, 3, 4, 5];
-output = numArray.includes(0);
+//output = numArray.includes(3);
 
 //padStart(), padEnd()
 name = 'John Honai';
-output = `${name.slice(-4).padStart(name.length, '*')} - ${name.slice(0, 4).padEnd(name.length, '*')}`;
+//output = `${name.slice(-4).padStart(name.length, '*')} - ${name.slice(0, 4).padEnd(name.length, '*')}`;
 
 //Classes
 class Animal {
@@ -103,10 +107,10 @@ class Animal {
     }
 }
 const cat = new Animal('Pussy', 4);
-output = JSON.stringify(cat);
-//output2 = cat.makeNoice();
-//output2 = Animal.whoAmI();
-output2 = cat.metadata;
+//output = JSON.stringify(cat);
+////output2 = cat.makeNoice();
+////output2 = Animal.whoAmI();
+//output2 = cat.metadata;
 
 class Bird extends Animal {
     constructor(type, legs, canFly){
@@ -121,10 +125,10 @@ class Bird extends Animal {
     }
 }
 const crow = new Bird('KaKa', 2, true);
-output = JSON.stringify(crow);
-//output2 = crow.makeNoice();
-//output2 = crow.metadata;
-output2 = Bird.whoAmI();
+//output = JSON.stringify(crow);
+////output2 = crow.makeNoice();
+////output2 = crow.metadata;
+//output2 = Bird.whoAmI();
 
 //Trailing Commas
 (function noErr(param1,){ //Trailing comma here
@@ -161,19 +165,10 @@ getAllPosts = async () => {
 const exampleSet = new Set([1, 2, 3, 4, 5, 5, 5, 4]);
 exampleSet.add(6);
 //exampleSet.delete(5);
-//output = exampleSet.has(1);
+////output = exampleSet.has(1);
 //exampleSet.clear();
-output = exampleSet;
-output2 = exampleSet.size;
-
-
-
-
-
-
-
-
-
+//output = exampleSet;
+//output2 = exampleSet.size;
 
 
 
