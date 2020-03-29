@@ -1,6 +1,6 @@
-import {output, output2} from './lib/RandomGenerator'
+import {output1, output2} from './lib/ES6Practice'
 const outputDiv = document.querySelector('#content');
-outputDiv.innerHTML = output;
+outputDiv.innerHTML = output1;
 const outputDiv2 = document.querySelector('#content2');
 outputDiv2.innerHTML = output2;
 
