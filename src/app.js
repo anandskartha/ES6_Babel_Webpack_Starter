@@ -1,5 +1,6 @@
-import {output1, output2} from './lib/ES6Practice'
-const outputDiv = document.querySelector('#content');
+//import {output1, output2} from './lib/ES6Practice'
+import {output1, output2, output3} from './lib/ES5Practice';
+const outputDiv = document.querySelector('#content1');
 outputDiv.innerHTML = output1;
 const outputDiv2 = document.querySelector('#content2');
 outputDiv2.innerHTML = output2;

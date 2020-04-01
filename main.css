@@ -60,7 +60,7 @@ body{
     padding: 10px;
     box-sizing: border-box;
 }
-#content, #content2 {
+#content1, #content2 {
     background:#333;
     color: white;
     border: 1px solid #ccc;
@@ -82,7 +82,7 @@ body{
         width: 100%;
         float: none;
     }
-    #content {
+    #content1 {
         width: 100%;
         float: none;
     }
