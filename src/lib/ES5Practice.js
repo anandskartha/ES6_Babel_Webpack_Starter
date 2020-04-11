@@ -1,4 +1,5 @@
 export let output1, output2;
+import $ from 'jquery';
 /*
 //1. Different ways of creating objects in Javascript
 var result = '';
@@ -145,5 +146,96 @@ output1 = getClosure('Sasidharan');
 output2 = getFullName('Anand')('Sasidharan');
 */
 /*
-//13. Promises
+//13. Callbacks, Promises, async/await
+//Callbacks
+var getData = function(fulfillCallback, rejectCallback) {
+    fetch('https://jsonplaceholder.typicode.com/todos/1').then(function(response){
+        if(response.ok) {
+            response.json().then(function(data) {
+                fulfillCallback(data);
+            });
+        } else {
+            rejectCallback({
+                status: response.status,
+                message: 'Callback Example: Failed to fetch data'
+            });
+        }
+    });
+};
+getData(function(response) {
+    console.log(response);
+    //output1 = JSON.stringify(response);
+}, function(error) {
+    console.log(error);
+    //output2 = JSON.stringify(error)
+});
+
+//Promise
+var getData = function() {
+    var promise = new Promise(function(resolutionFunc, rejectionFunc) {
+        fetch('https://jsonplaceholder.typicode.com/todos/1').then(function(response){
+            if(response.ok) {
+                response.json().then(function(data) {
+                    resolutionFunc(data);
+                });
+            } else {
+                rejectionFunc({
+                    status: response.status,
+                    message: 'Promise Example: Failed to fetch data'
+                });
+            }
+        });
+    });
+    return promise;
+};
+getData().then(function(response) {
+    console.log(response);
+});
+
+//Promise - 2
+var getData = function() {
+    return fetch('https://jsonplaceholder.typicode.com/todos/1');
+};
+getData().then(function(response) {
+    if(response.ok) {
+        response.json().then(function(data) {
+            console.log(data);
+        });
+    } else {
+        console.log({
+            status: response.status,
+            message: 'Promise Example: Failed to fetch data'
+        });
+    }
+});
 */
+//Jquery Deffered
+var getData = function() {
+    var deferred = $.Deferred();
+    fetch('https://jsonplaceholder.typicode.com/toos/1').then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                deferred.resolve(data)
+            });
+        } else {
+            deferred.reject({
+                status: response.status,
+                message: 'Promise Example: Failed to fetch data'
+            });
+        }
+    })
+    .catch(function(err) {
+        console.log(err);
+        deferred.reject({
+            status: response.status,
+            message: 'Promise Example: Failed to fetch data'
+        });
+    });
+    return deferred.promise();
+};
+
+getData().then(function(data) {
+    console.log(data);
+}, function(err) {
+    console.log(err);
+});
