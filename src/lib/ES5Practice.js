@@ -208,7 +208,7 @@ getData().then(function(response) {
         });
     }
 });
-*/
+
 //Jquery Deffered
 var getData = function() {
     var deferred = $.Deferred();
@@ -239,3 +239,99 @@ getData().then(function(data) {
 }, function(err) {
     console.log(err);
 });
+*/
+/*
+//Type Coercion
+output1 = 1 + 1 - '1' + 1 + 1.0;
+output2 = 1 + 1 - new Date () + true + 1.0 + '1' + false;
+//output1 = [] - [];
+
+//Immediately Invoked Function Expression (IIFE)
+output1 = 'test';
+(function a() {
+    var a = 100;
+    output2 = a;
+})();
+//output1 = a;
+
+//24. Call, Apply, Bind
+function MyConstructor(value) {
+    this.value = value;
+    this.getValue = function(str, a, b, c, d, e) {
+        return str + ' : ' + this.value + '##' + a + b + c + d + e;
+    }
+}
+var myObject1 = new MyConstructor(1);
+var myObject2 = new MyConstructor(2);
+//output1 = myObject1.getValue.call(myObject2, 'Call Output is');
+
+output2 = myObject2.getValue.apply(myObject1, ['Call Output is']);
+
+var bindFunc = myObject1.getValue.bind(myObject2, 'Call Output is', '7');
+output1 = bindFunc('5', '4', '3', '1');
+*/
+//How to find all properties under a given object ?
+/*
+var MyContructor = function(value1, value2) {
+    this.value1 = value1;
+    this.value2 = value2;
+
+    this.getValues1 = function() {
+        return this.value1;
+    }
+};
+MyContructor.prototype.getValues2 = function() {
+    return this.value2;
+};
+var myObject = new MyContructor(1, 2);
+//(a)Object.getOwnPropertyNames()
+output1 = Object.getOwnPropertyNames('as'); //[value1,value2,getValues1]
+output2 = Object.getOwnPropertyNames(myObject) instanceof Array; //true - Error for ES5; string will be coerced in 2015+
+//(b) Object.keys() works the same way //ES 5 +
+//(c) for .. in - support from ES 3 +
+var result = [];
+for(var key in myObject) { //Gets all properties directly under object and prototype
+    result.push(key + ' : ' + myObject[key]);
+}
+output1 = result;
+output2 = myObject.hasOwnProperty('getValues1'); //Checks members directly under the object, ignores prototype
+*/
+//26. What is Deep copy and Shallow copy? Implement it in Javascript.
+function deepCloneObject(obj) {
+    if (obj === null || typeof(obj) !== 'object')
+        return obj;
+    var temp = new obj.constructor();
+    for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) { //To ignore prototype members
+            temp[key] = deepCloneObject(obj[key]);
+        }
+    }
+    return temp;
+}
+var MyContructor = function(value1, value2) {
+    this.value1 = value1;
+    this.value2 = value2;
+    this.value3 = new Date();
+    this.value4 = undefined;
+    this.value5 = /^test1/;
+    this.value6 = {
+        subVal1: 1,
+        subVal2: 2,
+        subFunc1: function() {
+            return;
+        }
+    }
+
+    this.getValues1 = function() {
+        return this.value1;
+    }
+};
+MyContructor.prototype.getValues2 = function() {
+    return this.value2;
+};
+var myObject1 = new MyContructor(1, 2);
+//var myObject2 = JSON.parse(JSON.stringify(myObject1));
+var myObject2 = deepCloneObject(myObject1);
+output1 = Object.getOwnPropertyNames(myObject1);
+output2 = Object.getOwnPropertyNames(myObject2);
+console.log(myObject2);
