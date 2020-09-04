@@ -297,12 +297,14 @@ output1 = result;
 output2 = myObject.hasOwnProperty('getValues1'); //Checks members directly under the object, ignores prototype
 */
 //26. What is Deep copy and Shallow copy? Implement it in Javascript.
+/*
 function deepCloneObject(obj) {
-    if (obj === null || typeof(obj) !== 'object')
+    if (obj === null || typeof(obj) !== 'object') {
         return obj;
+    }
     var temp = new obj.constructor();
     for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) { //To ignore prototype members
+        if (Object.hasOwnProperty.call(obj, key)) { //To ignore prototype members
             temp[key] = deepCloneObject(obj[key]);
         }
     }
@@ -321,6 +323,9 @@ var MyContructor = function(value1, value2) {
             return;
         }
     }
+    this.value7 = [1, '2', 3.0, null, 4, undefined, function(){return;}];
+    this.value8 = null;
+    this.value9 = true;
 
     this.getValues1 = function() {
         return this.value1;
@@ -329,9 +334,92 @@ var MyContructor = function(value1, value2) {
 MyContructor.prototype.getValues2 = function() {
     return this.value2;
 };
-var myObject1 = new MyContructor(1, 2);
+var myObject1 = new MyContructor(1, '2');
 //var myObject2 = JSON.parse(JSON.stringify(myObject1));
 var myObject2 = deepCloneObject(myObject1);
 output1 = Object.getOwnPropertyNames(myObject1);
 output2 = Object.getOwnPropertyNames(myObject2);
 console.log(myObject2);
+*/
+//27. What is (NaN === NaN)? 
+//Check for NaN
+//For ECMAScript-5 Users:
+/*
+var x = 1;
+if(parseFloat(x) !== x) {
+    console.info(x + ' is NaN.');
+}
+else {
+    console.info(x + ' is NOT a NaN.');
+}
+//For people using ECMAScript-6:
+//Number.isNaN(x);
+*/
+//28. How to create a static, private, public variable?
+/*
+var Circle = function (radius) {
+    var PI = 3.14; //PRIVATE
+    this.radius = radius; //PUBLIC
+    this.findArea = function() { //PUBLIC
+        return PI * (this.radius * this.radius);
+    };
+};
+Circle.myStaticVariable = 'My Circle';
+var c1 = new Circle(10);
+output1 = c1.findArea();
+output2 = Circle.myStaticVariable; //STATIC
+let dog = {
+    sound: 'woof',
+    talk: function() {
+        return this.sound;
+    }
+}
+output1 = dog.talk();
+let talkFunction = dog.talk;
+output2 = talkFunction.call(dog);
+
+//Setting a protoype of an object
+var cat = {
+    breed: 'munchkin'
+};
+var myCat = {
+    name: 'Fluffy'
+};
+Object.setPrototypeOf(myCat, cat);
+output1 = myCat.name;
+output2 = myCat.breed;
+*/
+//29. Public and Private members using CLOSURES (without using constructor method)
+//This method is also known as module pattern.
+/*
+var Circle = function(radius) {
+    var PI = 3.14; //Private
+    return {
+        radius: radius, //Public
+        findArea: function() {
+            return this.radius * this.radius * PI;
+        }
+    };
+}
+var c1 = Circle(10);
+output1 = c1.findArea(); */
+//31. How can we maintain constant variables in ES5?
+Object.defineProperty(typeof global === "object" ? global : window, "PI1", {
+    value:        3.141593,
+    enumerable:   true,
+    writable:     false,
+    configurable: false
+});
+output1 = PI1;
+//Constants using closures
+var CONFIG = (function() {
+    var privateObj = {
+        PI2: 3.14159
+    };
+    return {
+        get: function(key) {
+            return privateObj[key];
+        }
+    }
+})();
+output2 = CONFIG.get('PI2');
