@@ -1,9 +1,12 @@
-//import {output1, output2} from './lib/ES6Practice'
-import * as output from './lib/ES5Practice';
+//import * as output from './lib/ES6Practice'
+//import * as output from './lib/ES5Practice';
+import * as output from './lib/JSTest'
 const outputDiv = document.querySelector('#content1');
 outputDiv.innerHTML = output.output1;
 const outputDiv2 = document.querySelector('#content2');
 outputDiv2.innerHTML = output.output2;
+const outputDiv3 = document.querySelector('#content3');
+outputDiv3.innerHTML = output.output3;
 
 
 //import './css/main.scss';

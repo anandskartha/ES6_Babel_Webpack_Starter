@@ -8,7 +8,7 @@
     "_build": "webpack -d --mode development",
     "build": "webpack-dev-server",
     "build:prod": "webpack -p",
-    "start": "webpack-dev-server --output-public-path=/build/"
+    "start": "webpack-dev-server -d --mode development --output-public-path=/build/"
   },
   "keywords": [],
   "author": "Anand Sasidharan",
