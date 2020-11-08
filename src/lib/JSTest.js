@@ -1,22 +1,40 @@
-export let output1, output2, output3;
+import inputs from './inputs';
 
+const inputOutput = [];
+let input = {};
+let output = '';
 
-const solution = (str) => {
-    const map = {
-        'a': '4',
-        'e': '3',
-        'i': '1',
-        'o': '0',
-        '2': '5',
-        't': '7',
-        'b': '5'
-    };
-    let result = str.toLowerCase().split('').map((item) => {
-        return map[item] || item;
-    }).join('');
-    return result;
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+const solution = (S) => {
+    const countLimit = 3;
+    if (S.length < countLimit) {
+        return S.length;
+    } else {
+        let count = 1;
+        let resultCount = 1;
+        for (let i = 1; i < S.length - 1; i++) {
+            if(S[i] === S[i - 1] && S[i] === S[i + 1]) {
+                resultCount = Math.max(resultCount, count + 1);
+                count = 1;
+            } else {
+                ++count;
+            }
+        }
+        return Math.max(resultCount, count + 1)
+    }
 }
 
-output1 = solution("Let's have some fun.");
-output2 = solution("C is for cookie, that's good enough for me");
-output3 = solution("By the power of Grayskull!");
+/////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+//No Changed below this needed
+for(const i of inputs) {
+    input = i;
+    output = solution.apply(null, Object.keys(i).map(key => i[key]));
+    inputOutput.push({ input, output });
+}
+
+export default inputOutput;
+

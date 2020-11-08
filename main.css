@@ -36,15 +36,15 @@ body{
 #showcase {
     background-image: url('showcase.jpg');
     background-position: center right;
-    min-height: 250px;
-    margin-bottom: 30px;
+    min-height: 100px;
+    margin-bottom: 20px;
     text-align: center;
 }
 #showcase h1 {
-    color: white;
-    font-size: 25px;
+    color: #ffffff;
+    font-size: 20px;
     line-height: 1.6em;
-    padding-top: 30px
+    padding-top: 10px
 }
 #main {
     float: left;
@@ -60,11 +60,11 @@ body{
     padding: 10px;
     box-sizing: border-box;
 }
-#content1, #content2, #content3 {
-    background:#333;
+div#testBed > div {
+    background:#1f3e58;
     color: white;
     border: 1px solid #ccc;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 15px;
     overflow: hidden;
     text-align: center;
