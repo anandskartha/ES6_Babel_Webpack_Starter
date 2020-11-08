@@ -1,6 +1,5 @@
-# Javascript Test Bed Application to Try out Things
-I try out things here. 
-
+# Javascript Test Bed Application to try out things
+Latest Javascript built and bundled using Webpack and Babel to serve as a testing environment
 
 --------------------------------------------
 Steps to reproduce
