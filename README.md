@@ -1,4 +1,4 @@
-# Javascript Test Bed Application to Tryout Things
+# Javascript Test Bed Application to Try out Things
 This is my starter app with ES6 and webpack. I try out things here. 
 
 
