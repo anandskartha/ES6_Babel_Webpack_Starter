@@ -69,6 +69,10 @@ div#testBed > div {
     overflow: hidden;
     text-align: center;
 }
+div#testBed p {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+}
 #main-footer{
     background:#333;
     color:white;

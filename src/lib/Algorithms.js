@@ -1,7 +1,4 @@
-import inputs from './inputs';
-
 const inputOutput = [];
-let result = {};
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,21 +19,18 @@ const solution = (S) => {
             }
         }
         return {
-            title: '',
+            title: 'Algo 1',
             input: S,
             output: Math.max(resultCount, count + 1)
         }
     }
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////
+inputOutput.push({ ...solution('baaabbabbbbba') });
+inputOutput.push({ ...solution('babba') });
+inputOutput.push({ ...solution('abaaaa') });
 
-//No Changed below this needed
-for(const i of inputs) {
-    result = solution.apply(null, Object.keys(i).map(key => i[key]));
-    inputOutput.push({ ...result });
-}
+
+
 
 export default inputOutput;
-
