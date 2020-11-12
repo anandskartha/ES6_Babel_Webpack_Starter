@@ -42,7 +42,17 @@ solution = (a, b) => {
 }
 inputOutput.push(solution('9999', '1'));
 
-
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////3. Integer Reversal//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (num) => {
+    return {
+        title: '3. Integer Reversal',
+        input: num,
+        output: ('' + num).split('').reverse().join('')
+    };
+}
+inputOutput.push(solution(12345));
 
 
 
