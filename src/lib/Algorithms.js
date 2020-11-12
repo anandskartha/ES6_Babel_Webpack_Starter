@@ -29,7 +29,6 @@ solution = (a, b) => {
     for(let i = 1; i <= maxLength; i++) {
         let aNum = +a.charAt(aLength - i);
         let bNum = +b.charAt(bLength - i);
-        console.log(bNum)
         let total = carry + aNum + bNum;
         carry = total / 10 | 0;
         total %= 10;
