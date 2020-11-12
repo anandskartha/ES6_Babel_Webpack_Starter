@@ -1,36 +1,50 @@
-const inputOutput = [];
+const inputOutput = []
+export default inputOutput;
 
 /////////////////////////////////////////////////////////////////////////////////////////////
+//////1. String Reversal//////
 /////////////////////////////////////////////////////////////////////////////////////////////
-
-const solution = (S) => {
-    const countLimit = 3;
-    if (S.length < countLimit) {
-        return S.length;
-    } else {
-        let count = 1;
-        let resultCount = 1;
-        for (let i = 1; i < S.length - 1; i++) {
-            if(S[i] === S[i - 1] && S[i] === S[i + 1]) {
-                resultCount = Math.max(resultCount, count + 1);
-                count = 1;
-            } else {
-                ++count;
-            }
+let solution = (str) => {
+        //const output = str.split('').reverse().join('');
+        let output = '';
+        for (const i of str) {
+            output = i + output;
         }
         return {
-            title: 'Algo 1',
-            input: S,
-            output: Math.max(resultCount, count + 1)
-        }
+            title: '1. String Reversal',
+            input: str,
+            output
+        };
     }
+inputOutput.push(solution('anandstringtest'));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////2. Sum of Big numbers using strings//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (a, b) => {
+    const aLength = a.length;
+    const bLength = b.length;
+    const maxLength = Math.max(aLength, bLength);
+    let carry = 0, sum = '';
+    for(let i = 1; i <= maxLength; i++) {
+        let aNum = +a.charAt(aLength - i);
+        let bNum = +b.charAt(bLength - i);
+        console.log(bNum)
+        let total = carry + aNum + bNum;
+        carry = total / 10 | 0;
+        total %= 10;
+        sum = (i === maxLength && carry)? (10 * carry) + total + sum : total + sum;
+    }
+    return {
+        title: '2. Sum of Big numbers using strings',
+        input: {a,b},
+        output: sum
+    };
 }
-
-inputOutput.push({ ...solution('baaabbabbbbba') });
-inputOutput.push({ ...solution('babba') });
-inputOutput.push({ ...solution('abaaaa') });
+inputOutput.push(solution('9999', '1'));
 
 
 
 
-export default inputOutput;
+
+
