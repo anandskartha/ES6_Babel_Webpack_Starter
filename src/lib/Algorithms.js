@@ -133,8 +133,8 @@ solution = (str1, str2) => {
         output
     };
 }
-inputOutput.push(solution('hello world', 'world hello'));
-inputOutput.push(solution('hellow world', 'world hello'));
+// inputOutput.push(solution('hello world', 'world hello'));
+// inputOutput.push(solution('hellow world', 'world hello'));
 inputOutput.push(solution('hellow world', 'wor1d he11o'));
 
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -156,3 +156,25 @@ solution = (str) => {
     };
 }
 inputOutput.push(solution('hello world'));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////8. Array Chunking//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (arr, size) => {
+    let start = 0, end;
+    let output = [];
+    while (start < arr.length) {
+        end = start + size;
+        output.push(arr.slice(start, end));
+        start += size;
+    }
+    return {
+        title: '8. Array Chunking',
+        input: arr,
+        output
+    };
+}
+inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 4));
+// inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 8));
+// inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 9));
+// inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 10));
