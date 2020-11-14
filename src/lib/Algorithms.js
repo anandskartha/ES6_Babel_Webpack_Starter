@@ -83,9 +83,9 @@ inputOutput.push(solution(30));
 //////5. Max Character in a String//////
 /////////////////////////////////////////////////////////////////////////////////////////////
 solution = (str) => {
-    const strArray = str.toLowerCase().split('');
+    const strL = str.toLowerCase();
     let countMap = {}, maxCount = 0, output = [];
-    for(let i of strArray) {
+    for(let i of strL) {
         countMap[i] = (countMap[i] || 0) + 1;
     }
     maxCount = Math.max(...Object.values(countMap));
@@ -102,4 +102,57 @@ solution = (str) => {
 }
 inputOutput.push(solution('anandaaaa'));
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////6. Anagrams - words or phrases that contain the same number of characters//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (str1, str2) => {
+    const strL1 = str1.toLowerCase();
+    const strL2 = str2.toLowerCase();
+    const countMap1 = {}, countMap2 = {};
+    let output = true;
+    for(let i of strL1) {
+        countMap1[i] = (countMap1[i] || 0) + 1;
+    }
+    for(let i of strL2) {
+        countMap2[i] = (countMap2[i] || 0) + 1;
+    }
+    if(Object.keys(countMap1).length !== Object.keys(countMap2).length) {
+        output = false;
+    } else {
+        for(let i in countMap1) {
+            if(countMap1[i] !== countMap2[i]) {
+                output = false;
+                break;
+            }
+        }
+    }
+    
+    return {
+        title: '6. Anagrams - words or phrases that contain the same number of characters',
+        input: {str1, str2},
+        output
+    };
+}
+inputOutput.push(solution('hello world', 'world hello'));
+inputOutput.push(solution('hellow world', 'world hello'));
+inputOutput.push(solution('hellow world', 'wor1d he11o'));
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////7. Count Distinct Vowels//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (str) => {
+    const vowels = 'aeiou';
+    const strL = str.toLowerCase();
+    let uniq = new Set();
+    for(let i of strL) {
+        if(vowels.includes(i)) {
+            uniq.add(i);
+        }
+    }
+    return {
+        title: '7. Count Distinct Vowels',
+        input: str,
+        output: uniq.size
+    };
+}
+inputOutput.push(solution('hello world'));
