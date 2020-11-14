@@ -1,6 +1,6 @@
 //import * as output from './lib/ES6Practice'
 //import * as output from './lib/ES5Practice';
-//import inputOutput from './lib/JSTest'
+//import inputOutput from './lib/JSTest';
 import inputOutput from './lib/Algorithms';
 
 const testBed = document.querySelector('#testBed');

@@ -54,6 +54,52 @@ solution = (num) => {
 }
 inputOutput.push(solution(12345));
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////4. The Fizz Buzz problem//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (num) => {
+    let output = [];
+    let fizzBuzzMap = new Map([[6, 'Fizz Buzz'], [3, 'Buzz'], [2, 'Fizz']]);
+    for(let i = 1; i <= num; i++) {
+        if(i % 12 == 0) {
+            output.push('Fizz Buzz');
+        } else if(i % 6 == 0) {
+            output.push('Buzz');
+        } else if(i % 3 == 0) {
+            output.push('Fizz');
+        } else {
+            output.push(i);
+        }
+    }
+    return {
+        title: '4. The Fizz Buzz problem',
+        input: num,
+        output
+    };
+}
+inputOutput.push(solution(30));
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////5. Max Character in a String//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (str) => {
+    const strArray = str.toLowerCase().split('');
+    let countMap = {}, maxCount = 0, output = [];
+    for(let i of strArray) {
+        countMap[i] = (countMap[i] || 0) + 1;
+    }
+    maxCount = Math.max(...Object.values(countMap));
+    for(let i in countMap) {
+        if(countMap[i] === maxCount) {
+            output.push(i);
+        }
+    }
+    return {
+        title: '5. Max Character in a String',
+        input: str,
+        output
+    };
+}
+inputOutput.push(solution('anandaaaa'));
 
 
