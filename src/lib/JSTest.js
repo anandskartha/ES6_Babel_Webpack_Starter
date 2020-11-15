@@ -1,5 +1,3 @@
-import inputs from './inputs';
-
 const inputOutput = [];
 let result = {};
 
@@ -31,12 +29,15 @@ const solution = (S) => {
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
-
 //No Changed below this needed
-for(const i of inputs) {
-    result = solution.apply(null, Object.keys(i).map(key => i[key]));
-    inputOutput.push({ ...result });
-}
+
+inputOutput.push(solution('anand'));
+
+
+
+
+
+
 
 export default inputOutput;
 

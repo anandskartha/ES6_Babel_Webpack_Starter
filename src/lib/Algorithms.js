@@ -161,11 +161,10 @@ inputOutput.push(solution('hello world'));
 //////8. Array Chunking//////
 /////////////////////////////////////////////////////////////////////////////////////////////
 solution = (arr, size) => {
-    let start = 0, end;
+    let start = 0;
     let output = [];
     while (start < arr.length) {
-        end = start + size;
-        output.push(arr.slice(start, end));
+        output.push(arr.slice(start, start + size));
         start += size;
     }
     return {
