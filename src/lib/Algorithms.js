@@ -194,3 +194,23 @@ solution = (arr) => {
     };
 }
 inputOutput.push(solution([1,2,3,4,5,6,7,8,9]));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////10. Reverse Words in a phrase//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (phrase) => {
+    let output = phrase;
+    let i = output.length - 1;
+    let start;
+    while(i >= 0) {
+        start = output.lastIndexOf(' ', i) + 1;
+        output.splice(start, 0, output.slice(start, i).reverse());
+        i = start;
+    }
+    return {
+        title: '10. Reverse Words in a phrase',
+        input: phrase,
+        output
+    };
+}
+inputOutput.push(solution([1,2,3,4,5,6,7,8,9]));
