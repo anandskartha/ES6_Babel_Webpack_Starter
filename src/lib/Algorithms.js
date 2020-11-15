@@ -177,3 +177,20 @@ inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 4));
 // inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 8));
 // inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 9));
 // inputOutput.push(solution([1,2,3,4,5,6,7,8,9], 10));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////9. Array Reversal//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (arr) => {
+    //[...arr].reverse()
+    let output = [...arr];
+    for(let i = 0; i < (output.length / 2); i++) {
+        output[output.length - i - 1] = [output[i], output[i] = output[output.length - i - 1]][0];
+    }
+    return {
+        title: '9. Array Reversal',
+        input: arr,
+        output
+    };
+}
+inputOutput.push(solution([1,2,3,4,5,6,7,8,9]));
