@@ -241,3 +241,16 @@ solution = (ransomeNote) => {
 }
 inputOutput.push(solution('sit ad est sint'));
 inputOutput.push(solution('sit ad est love'));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////12. //////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = () => {
+    
+    return {
+        title: '12. ',
+        input: ,
+        output
+    };
+}
+inputOutput.push(solution());
