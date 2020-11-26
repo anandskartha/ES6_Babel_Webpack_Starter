@@ -243,14 +243,15 @@ inputOutput.push(solution('sit ad est sint'));
 inputOutput.push(solution('sit ad est love'));
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-//////12. //////
+//////12. Palindrome//////
 /////////////////////////////////////////////////////////////////////////////////////////////
-solution = () => {
-    
+solution = (str) => {
+    const output = (str == str.toString().split('').reverse().join(''));
     return {
-        title: '12. ',
-        input: ,
+        title: '12. Palindrome',
+        input: str,
         output
     };
 }
-inputOutput.push(solution());
+inputOutput.push(solution('racecar'));
+inputOutput.push(solution(12321));
