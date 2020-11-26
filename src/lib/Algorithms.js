@@ -255,3 +255,21 @@ solution = (str) => {
 }
 inputOutput.push(solution('racecar'));
 inputOutput.push(solution(12321));
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//////13. Capitalize a sentence//////
+/////////////////////////////////////////////////////////////////////////////////////////////
+solution = (str) => {
+    let output;
+    //let strArr = str.toLowerCase().split(' ');
+    output = str.replace(/\b[a-z]/gi, (char) => char.toUpperCase());
+    // output = strArr.reduce((prevValue, i) => {
+    //     return `${prevValue} ${i.substring(0, 1).toUpperCase()+i.substring(1)}`;
+    // }, '');
+    return {
+        title: '13. Capitalize a sentence',
+        input: str,
+        output
+    };
+}
+inputOutput.push(solution('i love my racecar'));
