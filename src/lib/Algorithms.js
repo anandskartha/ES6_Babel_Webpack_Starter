@@ -275,15 +275,18 @@ solution = (str) => {
 inputOutput.push(solution('i love my racecar'));
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-//////14. //////
+//////14. Longest Word//////
 /////////////////////////////////////////////////////////////////////////////////////////////
-solution = (str) => {
+solution = (sent) => {
     let output;
-
+    const wordArr = sent.toLowerCase().match(/[a-z0-9]+/g);
+    const sorted = wordArr.sort((a, b) => b.length - a.length);
+    const longestWordsArr = sorted.filter((word) => word.length === sorted[0].length);
+    output = longestWordsArr;
     return {
-        title: '14. ',
-        input: str,
+        title: '14. Longest Word',
+        input: sent,
         output
     };
 }
-inputOutput.push(solution(''));
+inputOutput.push(solution('Hello there, my name is Anand'));
